@@ -9,19 +9,22 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    // 1. Избавиться от кнопки возврата назад на экране результатов
-    // 2. Передать массив с ответами на экран с результатами
-    // 3. Определить наиболее часто встречающийся тип животного
-    // 4. Отобразить результаты в соответствии с этим животным
-
+    var answersChosen: [Answer] = []
+   
+    @IBOutlet var animalResultLabel: UILabel!
+    @IBOutlet var textResultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        animalResultLabel.text = "Вы \(answersChosen.first?.animal.rawValue ?? " ")!"
+        textResultLabel.text = "\(answersChosen.first?.animal.definition ?? "")"
     }
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
+    
     
     deinit {
         print("\(type(of: self)) has been deallocated")
