@@ -40,6 +40,12 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let getAnswers = segue.destination as? ResultViewController else {return}
+        answersChosen = answersChosen.sorted(by: {$0.animal.rawValue > $1.animal.rawValue})
+        getAnswers.answersChosen = answersChosen
+    }
 
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return }
@@ -69,6 +75,7 @@ class QuestionViewController: UIViewController {
     deinit {
         print("\(type(of: self)) has been deallocated")
     }
+    
     
 }
 
@@ -145,3 +152,5 @@ private extension QuestionViewController {
     }
     
 }
+
+
