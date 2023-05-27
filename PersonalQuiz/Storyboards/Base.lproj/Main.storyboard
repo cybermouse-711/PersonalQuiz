@@ -298,7 +298,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ovD-oU-ves">
-                                <rect key="frame" x="16" y="240" width="288" height="88.5"/>
+                                <rect key="frame" x="16" y="238" width="288" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы – 🐙" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za0-gA-BIl">
                                         <rect key="frame" x="61.5" y="0.0" width="165.5" height="60"/>
@@ -306,9 +306,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы – осьминог" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvl-hC-bYw">
-                                        <rect key="frame" x="85" y="68" width="118" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы – осьминог" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvl-hC-bYw">
+                                        <rect key="frame" x="76.5" y="68" width="135.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -324,12 +324,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="6Aa-8C-AYu">
+                        <barButtonItem key="backBarButtonItem" title="backButton" id="bjV-Yz-130"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="WsX-6E-G2o">
                             <connections>
                                 <action selector="doneButtonPressed:" destination="LiX-kO-U2P" id="lzA-IC-TAP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="animalResultLabel" destination="za0-gA-BIl" id="yAq-n1-c0z"/>
+                        <outlet property="textResultLabel" destination="Mvl-hC-bYw" id="bXq-Fx-1U7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvQ-pc-RMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
